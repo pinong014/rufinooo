@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="Pahina">
+		<nav>
+
+			<img src="{% static '/css/logo.jpg' %}"  class="logo">	
+		<ul>
+			<li><a href="">Titik Profile</a></li>
+			<li><a href="{% url 'TitikPoetry' %}">Titik Poetry</a></li>
+			<li><a href="{% url 'TitikVideo' %}">Titik Video</a></li>
+			<li><a href="{% url 'TitikEnterprise' %}">Titik Enterprise</a></li>
+			<li><a href="{% url 'TitikSigya' %}">Titik Sigya</a></li>
+		</ul>
+		<a href="" class="btn">Audition Now</a>
+		</nav>
+    
+<div class="Raw">
+			<div class="First">
+			</div>
+			<div class="Second">
+				<h1>Passion<br> <span>Advocacy</span><br> Enterprise</h1>
+				<p><span>Naniniwala</span> sa <span>kakayahan</span> ng <span>pangangarap</span></p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+		
