@@ -93,28 +93,33 @@ a:hover{
 
 	
 </style>
+<form method="POST" action="SecondPage">
+	
+	{% csrf_token %}	
 
-
-<div class="Loob">
+		<div class="Loob">
 <div class="Gitna">
 <div class="inner-box" id="Gitna">
 <div class="Harap">
 	<h2>Information</h2>
-	<form>
-		<input type="text" class="input-box" placeholder="Name" required>
-		<input type="email" class="input-box" placeholder="Email" required><br>
-  		<p1>Birthday: </p1><input type="date" class="input-box2">
-  		<input type="radio" class="input-box1" value="male"> Male<br>
-  		<input type="radio" class="input-box1" value="female"> Female<br>
-	</form>
-	<a href="{% url 'MainPage' %}">Done</a>
 
+		<input id="name" name="name" type="text" class="input-box" placeholder="Name" required>
+		<input id="email" name="email" type="email" class="input-box" placeholder="Email" required><br>
+  		<p1>Birthday: </p1><input id="birthday" name="birthday" type="date" class="input-box2">
+  		<input id="gender" name="gender" type="radio" class="input-box1" value="Male"> Male<br>
+  		<input id="gender" name="gender" type="radio" class="input-box1" value="Female"> Female<br>
+
+	
+<input type="submit" value="Done">
 </div>
 </div>
 </div>
 </div>
+
+		</form>
+
+
 {% endblock %}
 		
-
 
 

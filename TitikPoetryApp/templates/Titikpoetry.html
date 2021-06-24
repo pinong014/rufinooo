@@ -57,21 +57,24 @@ a:hover{
   color: white;
 }
 </style>
+<form method="POST" action="TitikPoetry" enctype="multipart/form-data">
+{% csrf_token %}	
 
 <div style="width: %;
 	height: 100%; background-image: url('{% static '/css/bg1.jpg' %}');">
+
 <div class="card-front">
-
-	<h2>Upload your Poetry</h2><input type="text" class="Titulo" placeholder="Titulo ng tula">
-	<form>
+	<h2>Upload your Poetry</h2><input type="submit"><input name="video" type="file" class="Video" placeholder="Performance" required><input name="name"type="text" class="Titulo" placeholder="Titulo ng tula">
 	<textarea class="Tula" name="Tula" rows="30" cols="200" placeholder="Buong piyesa"></textarea>
-	</form>
-	<a href="Mainpage.html">Done
+	
+	
+	
+		
 </div>
 </div>
 </div>
 </div>
-
+</form>
 {% endblock %}
 
 

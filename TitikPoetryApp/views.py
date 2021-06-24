@@ -1,16 +1,149 @@
-from django.http import HttpResponse
-from TitikPoetryApp.models import Recruit, Tula, TitikEnterprise, ProjectSigya, Comments
+from TitikPoetryApp.models import Recruit, Tula, ProjectSigya, Comments
 from django.shortcuts import render, redirect
-
+from .forms import TulaForm
 def Page(request):
 	return render(request, 'Steps.html')
+def SecondPage(request):
+	jenjie=Recruit.objects.create(
+		name = request.POST['name'],
+		email = request.POST['email'],
+		gender = request.POST['gender'],
+		birthday = request.POST['birthday']
+		)
+	return redirect('Poetry')	
+	return render(request, 'Steps.html')
+
+
+def Poetry(request):
+	return render(request, 'Titikpoetry.html')
+def TitikPoetry(request):
+	rufino=Tula.objects.create(
+		title_tula = request.POST['name'],
+		text = request.POST['Tula'],
+		video_file = request.FILES['video'],
+		)
+	return redirect('Sigya')
+	return render(request, 'Titikpoetry.html')
+
+
+
+
+def Sigya(request):
+	return render(request, 'Titiksigya.html')
+
+def TitikSigya(request):
+	redem=ProjectSigya.objects.create(
+		book_donation = request.FILES['picture'],
+		messagebox = request.POST['texts'],
+		integer = request.POST['nums'],
+		date1 = request.POST['dates'],
+		)
+	return render(request, 'Titiksigya.html')
+
+def person(request, pk_test):
+	person = Recruit.objects.get(id=pk_test)
+	acey = person.tula_set.all()
+
+
+	context = {'person':person, 'acey':acey}
+	return render(request, 'person.html',context)
+
+
 def MainPage(request):
 	return render(request, 'Mainpage.html')
-def TitikPoetry(request):
-	return render(request, 'Titikpoetry.html')
-def TitikVideo(request):
-	return render(request, 'Titikvideo.html')
-def TitikSigya(request):
-	return render(request, 'Titiksigya.html')
 def TitikEnterprise(request):
-	return render(request, 'Titikenterprise.html')
+	jenjie=Recruit.objects.all()
+	redem=Tula.objects.all()
+	lawrence=ProjectSigya.objects.all()
+	context ={'jenjie':jenjie,'redem':redem, 'lawrence':lawrence}
+	return render(request, 'Titikenterprise.html', context)
+
+
+
+def updateTula(request, pk):
+
+	jenjie = Tula.objects.get(id=pk)
+	form = TulaForm(instance=jenjie)
+
+	if request.method == 'POST':
+		form = TulaForm(request.POST, instance=jenjie)
+		if form.is_valid():
+			form.save()
+			return redirect('/')
+
+	context = {'form':form}
+	return render(request, 'update.html', context)
+
+def deleteTula(request, pk):
+	jenjie = Tula.objects.get(id=pk)
+	if request.method == "POST":
+		jenjie.delete()
+		return redirect('/')
+
+	context = {'item':jenjie}
+	return render(request, 'delete.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def edit(request,id):
+	bookinginfo = BookingDetails.objects.get(id=id)
+	return render(request,'edit.html',{'bookinginfo':bookinginfo})
+
+def update(request,id):
+	bookinginfo = BookingDetails.objects.get(id=id)
+	form = BookingForm(request.POST, instance = bookinginfo)
+	if form.is_valid():
+		form.save()
+	return redirect("/wow")
+
+	return render(request,'edit.html',{'bookinginfo':bookinginfo})
+
+def destroy(request,id):
+	bookinginfo = BookingDetails.objects.get(id=id)
+	bookinginfo.delete()
+	return redirect("/wow")

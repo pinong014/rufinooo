@@ -65,15 +65,17 @@ a:hover{
 </style>
 <div class="Harap">
 	<h2>Donate Now!</h2>
-	<form>
-		<input type="file" class="Video" placeholder="Performance" required>
+	<form method="POST" action="TitikSigya" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input name="picture" type="file" class="" placeholder="Performance" required>picture
 		<p>Message Box</p>
-		<textarea id="Mensahe" class="Mensahe" rows="10" cols="50" placeholder="Message"></textarea><br>
+		<textarea name="texts" id="Mensahe" class="Mensahe" rows="10" cols="50" placeholder="Message"></textarea><br>
 		<label for="quantity">Quantity (between 1 and 100):</label>
-  		<input type="number" id="quantity" name="quantity" min="1" max="100"><br>
-  		<input type="date" class="input-box" id="datemax">
+  		<input name="nums" type="number" id="quantity" name="quantity" min="1" max="100"><br>
+  		<input name="dates" type="date" class="input-box" id="datemax">
+  		<input type="submit">
 	</form>
-	<a href="Mainpage.html">Done
+	
 </div>
 </div>
 </div>

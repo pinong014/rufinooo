@@ -1,0 +1,87 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.Loob{
+	width: 100%;
+	height: 100vh;
+	font-family: sans-serif;
+	background: linear-gradient(rgba(200,0,0,0.6),rgba(150,0,0,0.6));
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Gitna{
+	width: 350px;
+	height: 500px;
+	box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+	perspective: 1000px;
+}
+.inner-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+.Harap{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-image: linear-gradient(rgba(100,0,0,0.6),rgba(100,0,0,0.6)),url(bg1.jpg);
+	padding: 55px;
+	box-sizing: border-box;
+	backface-visibility: hidden;
+}
+.Gitna h2{
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.input-box{
+	width: 100%;
+	background: transparent;
+	border: 1px solid #fff;
+	margin: 6px 0;
+	height: 32px;
+	border-radius: 20px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	color: #fff;
+}
+.input-box1{
+	width: 32px;
+	margin-left: 65px;
+	margin-top: 10px;
+	height: 15px;
+	position: relative;
+}
+.input-box2{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+::placeholder{
+	color: #fff;
+	font-size: 12px;
+
+}
+a:link{
+  background-color: white;
+  border: 2px solid red;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 35px 50px 30px;
+
+}
+a:hover{
+  background-color: red;
+  color: white;
+}
