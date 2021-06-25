@@ -25,9 +25,6 @@ def TitikPoetry(request):
 	return redirect('Sigya')
 	return render(request, 'Titikpoetry.html')
 
-
-
-
 def Sigya(request):
 	return render(request, 'Titiksigya.html')
 
@@ -38,7 +35,35 @@ def TitikSigya(request):
 		integer = request.POST['nums'],
 		date1 = request.POST['dates'],
 		)
+	return redirect('TitikEnterprise')
 	return render(request, 'Titiksigya.html')
+
+def TitikEnterprise(request):
+	return render(request, 'TitikEnterprise.html')
+def TitikEnterprise(request):
+	jenjie=Recruit.objects.all()
+	redem=Tula.objects.all()
+	lawrence=ProjectSigya.objects.all()
+	context ={'jenjie':jenjie,'redem':redem, 'lawrence':lawrence}
+	return render(request, 'Titikenterprise.html', context)
+
+def Titikvideo(request):
+	return render(request, 'Titikvideo.html')
+def Titikvideo(request):
+	jenjie=Recruit.objects.all()
+	redem=Tula.objects.all()
+	lawrence=ProjectSigya.objects.all()
+	context ={'jenjie':jenjie,'redem':redem, 'lawrence':lawrence}
+	return render(request, 'Titikvideo.html', context)
+def Titikpoetry2(request):
+	return render(request, 'Titikpoetry2.html')
+def Titikpoetry2(request):
+	jenjie=Recruit.objects.all()
+	redem=Tula.objects.all()
+	lawrence=ProjectSigya.objects.all()
+	context ={'jenjie':jenjie,'redem':redem, 'lawrence':lawrence}
+
+	return render(request, 'Titikpoetry2.html', context)
 
 def person(request, pk_test):
 	person = Recruit.objects.get(id=pk_test)
@@ -49,14 +74,7 @@ def person(request, pk_test):
 	return render(request, 'person.html',context)
 
 
-def MainPage(request):
-	return render(request, 'Mainpage.html')
-def TitikEnterprise(request):
-	jenjie=Recruit.objects.all()
-	redem=Tula.objects.all()
-	lawrence=ProjectSigya.objects.all()
-	context ={'jenjie':jenjie,'redem':redem, 'lawrence':lawrence}
-	return render(request, 'Titikenterprise.html', context)
+
 
 
 
@@ -82,68 +100,3 @@ def deleteTula(request, pk):
 
 	context = {'item':jenjie}
 	return render(request, 'delete.html', context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def edit(request,id):
-	bookinginfo = BookingDetails.objects.get(id=id)
-	return render(request,'edit.html',{'bookinginfo':bookinginfo})
-
-def update(request,id):
-	bookinginfo = BookingDetails.objects.get(id=id)
-	form = BookingForm(request.POST, instance = bookinginfo)
-	if form.is_valid():
-		form.save()
-	return redirect("/wow")
-
-	return render(request,'edit.html',{'bookinginfo':bookinginfo})
-
-def destroy(request,id):
-	bookinginfo = BookingDetails.objects.get(id=id)
-	bookinginfo.delete()
-	return redirect("/wow")

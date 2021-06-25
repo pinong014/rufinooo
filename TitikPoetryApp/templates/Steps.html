@@ -17,6 +17,19 @@
 	align-items: center;
 	justify-content: center;
 }
+.dan{
+	background-color: transparent;
+  	border: 2px solid red;
+  	padding: 10px 50px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	margin: 35px 50px 30px;
+}
+.dan:hover{
+  background-color: red;
+  color: white;
+} 
 .Gitna{
 	width: 350px;
 	height: 500px;
@@ -75,23 +88,7 @@
 	color: #fff;
 	font-size: 12px;
 
-}
-a:link{
-  background-color: white;
-  border: 2px solid red;
-  padding: 10px 50px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 35px 50px 30px;
-
-}
-a:hover{
-  background-color: red;
-  color: white;
 }	
-
-	
 </style>
 <form method="POST" action="SecondPage">
 	
@@ -103,14 +100,14 @@ a:hover{
 <div class="Harap">
 	<h2>Information</h2>
 
-		<input id="name" name="name" type="text" class="input-box" placeholder="Name" required>
+		<input id="name" name="name" type="text" class="input-box" placeholder="Name">
 		<input id="email" name="email" type="email" class="input-box" placeholder="Email" required><br>
-  		<p1>Birthday: </p1><input id="birthday" name="birthday" type="date" class="input-box2">
-  		<input id="gender" name="gender" type="radio" class="input-box1" value="Male"> Male<br>
-  		<input id="gender" name="gender" type="radio" class="input-box1" value="Female"> Female<br>
+  		<p1>Birthday: </p1><input id="birthday" name="birthday" type="date" class="input-box2" required>
+  		<input id="gender" name="gender" type="radio" class="input-box1" value="Male"required> Male<br>
+  		<input id="gender" name="gender" type="radio" class="input-box1" value="Female"required> Female<br>
 
 	
-<input type="submit" value="Done">
+<input type="submit" value="Done" class="dan">
 </div>
 </div>
 </div>

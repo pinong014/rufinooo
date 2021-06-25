@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.Pahina{
+	background: linear-gradient(#fff);
+	padding-left: 10%;
+	padding-right: 10%;
+
+}
+nav{
+	display: flex;
+	align-items: center;
+	padding: 0px;
+
+}
+.logo{
+	width: 150px;
+}
+nav ul{
+	flex: 1;
+	text-align: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	margin: 0 15px;
+	font-size: 20px;
+	animation: movedown 1s linear 1;
+	animation-delay: 2s;
+	visibility: hidden;
+	animation-fill-mode: forwards;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.btn{
+	border: 2px solid black;
+	padding: 6px 25px;
+	border-radius: 30px;
+	margin-left: 30px;
+	animation: movedown 1s linear 1;
+	animation-delay: 3s;
+	visibility: hidden;
+	animation-fill-mode: forwards;
+}
+.Raw{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.First{
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	background-size: cover;
+	background-image: linear-gradient(rgba(100,0,0,0.5),rgba(100,0,0,0.5)),url({% static '/css/sigya.jpg' %});
+	animation: zooming 1s linear 1;
+	animation-delay: 5s;
+	visibility: hidden;
+	animation-fill-mode: forwards;
+
+}
+@keyframes zooming{
+	0%{
+		transform: scale(0.5);
+		visibility: visible;
+	}
+	100%{
+		transform: scale(1);
+		visibility: visible;
+	}
+}
+.Second{
+	flex-basis: 55%;
+	min-width: 300px;
+	margin-bottom: 30px;
+	animation: moveright 1s linear 1;
+	animation-delay: 4s;
+	visibility: hidden;
+	animation-fill-mode: forwards;
+}
+@keyframes moveright{
+	0%{
+		transform: translateX(-100px);
+		visibility: visible;
+	}
+	100%{
+		transform: translateX(0);
+		visibility: visible;
+	}
+}
+.Second h1{
+	font-size: 62px;
+	font-weight: 600;
+	margin-left: 140%;
+	margin-bottom: 3%;
+
+}
+span{
+	color: red;
+}
+.Second p{
+	font-size: 20px;
+	font-weight: 200;
+	margin-left: 140%;
+	margin-bottom: 5%;
+
+}
+.logo{
+	width: 160px;
+	cursor: pointer;
+	animation: movedown 1s linear 1;
+	animation-delay: 1s;
+	visibility: hidden;
+	animation-fill-mode: forwards;
+}
+@keyframes movedown{
+	0%{
+		transform: translateY(-100px);
+		visibility: visible;
+	}
+	100%{
+		transform: translateY(0);
+		visibility: visible;
+	}
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.Loob{
+	width: 100%;
+	height: 100vh;
+	font-family: sans-serif;
+	background: linear-gradient(rgba(200,0,0,0.6),rgba(150,0,0,0.6));
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+</style>
+<div class="Pahina">
+		<nav>
+
+			<img src="{% static '/css/logo.jpg' %}"  class="logo">	
+		<ul>
+			<li><a href="">Titik Profile</a></li>
+			<li><a href="{% url 'TitikPoetry' %}">Titik Poetry</a></li>
+			<li><a href="{% url 'TitikVideo' %}">Titik Video</a></li>
+			<li><a href="{% url 'TitikEnterprise' %}">Titik Enterprise</a></li>
+			<li><a href="{% url 'TitikSigya' %}">Titik Sigya</a></li>
+		</ul>
+		<a href="" class="btn">Audition Now</a>
+		</nav>
+    
+<div class="Raw">
+			<div class="First">
+			</div>
+			<div class="Second">
+				<h1>Passion<br> <span>Advocacy</span><br> Enterprise</h1>
+				<p><span>Naniniwala</span> sa <span>kakayahan</span> ng <span>pangangarap</span></p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+		

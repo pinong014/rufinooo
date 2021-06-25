@@ -6,6 +6,7 @@
 	*{
 	margin: 0;
 	padding: 0;
+	font-size: 25px;
 }
 .Harap{
 	position: absolute;
@@ -67,7 +68,8 @@ a:hover{
 	<h2>Donate Now!</h2>
 	<form method="POST" action="TitikSigya" enctype="multipart/form-data">
 		{% csrf_token %}
-		<input name="picture" type="file" class="" placeholder="Performance" required>picture
+		<label>Proof of donation</label>
+		<input name="picture" type="file" class="" placeholder="Performance" required>
 		<p>Message Box</p>
 		<textarea name="texts" id="Mensahe" class="Mensahe" rows="10" cols="50" placeholder="Message"></textarea><br>
 		<label for="quantity">Quantity (between 1 and 100):</label>

@@ -32,10 +32,3 @@ class Comments(models.Model):
 	publications = models.ManyToManyField(Tula)
 	comment = models.CharField(max_length=50)
 	date2 = models.DateTimeField(auto_now_add=True)
-
-
-
-
-
-
-	
